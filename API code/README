@@ -39,7 +39,8 @@ Title: TMDB film data
 - films_tmdb.csv: This file have 936 rows and 2 columns.  
 - films_tmdb.csv: TMDB id's were manually inputed from the TMDB website, https://www.themoviedb.org/?language=en-US, and registering for an account is required.
 - films_tmdb.csv: The list of films are from nomimees and winners of the Academy Awards from 1996-2024 for the following categories: Directing, Actor in a Leading and Supporting Role, Actress in a Leading and Supporting Role, and Best Picture.
-- tmdb.ipynb: Python version 3.13.9. Jupyterlab version 4.4.7. Movie ID 35430 is skipped. Link to Google Collab version: https://bit.ly/4dHHjhg
+- tmdb.ipynb: Python version 3.13.9. Jupyterlab version 4.4.7. Link to Google Collab version: https://bit.ly/4dHHjhg
+- tmdb.ipynb: Movie ID 35430 is skipped. My personal TMDB API key was removed from code. To run code TMDB API key is needed. 
 
 # Licenses/restrictions
 - License: GPL-3.0 
