@@ -3,27 +3,45 @@ This readme file was generated on 2026-04-11 by Emely Perkins. [Updated on YYYY-
 Title: TMDB film data
 
 # Author/Principal Investigator Information
-Name: Emely Perkins
-ORCID: N/A
-Institution: Pratt Institute
-Email: eperki40@pratt.edu
+- Name: Emely Perkins
+- ORCID: N/A
+- Institution: Pratt Institute
+- Email: eperki40@pratt.edu
 
 # Data of Collection
-March 2026 - April 2026
+- March 2026 - April 2026
 
 # Keywords
-tmdb: The Movie Database 
-API: Application Programming Interface
+- tmdb: The Movie Database 
+- API: Application Programming Interface
+- .ipynb and .py are Python files
+- .csv: comma-separated values (spreadsheet)
+- .txt: text file
 
 # Language
-The markdown within code is written in language, and was programmed in Python
+- The markdown within code is written in language, and was programmed in Python
 
-# Folder Overview
+# File List
 - films_tmdb.csv
 - tmdb.ipynb
+- tmdb.py
+- requirements.txt
 - Output folder
 
 # File Description
-- films_tmdb.csv: Contains list of film titles and their corresponding tmdb id. The list of films was pulled from the list of nomimees and winners of the Academy Awards from 1996-2024 for the following categories: Directing, Actor in a Leading Role, Actor in a Supporting Role, Actress in a Leading Role, Actress in a Supporting Role, and Best Picture. TMDB id's were manually inputed from the TMDB website, https://www.themoviedb.org/?language=en-US. 
-- tmdb.ipynb: Fetches data from TMDB API, processes film credits and detail. Python version 3.13.9. Jupyterlab version 4.4.7. 
+- films_tmdb.csv: Contains list of film titles and their corresponding tmdb id.    
+- tmdb.ipynb: Fetches data from TMDB API, processes film credits and detail. 
+- tmdb.py: This is the version controlled file of tmdb.ipynb. 
+- requirements.txt: Python list of installed packages. 
 - Output folder: Contains all the outputs from tmdb.ipynb, including multiple versions
+
+# Data Specific Information
+- films_tmdb.csv: This file have 936 rows and 2 columns.  
+- films_tmdb.csv: TMDB id's were manually inputed from the TMDB website, https://www.themoviedb.org/?language=en-US, and registering for an account is required.
+- films_tmdb.csv: The list of films are from nomimees and winners of the Academy Awards from 1996-2024 for the following categories: Directing, Actor in a Leading and Supporting Role, Actress in a Leading and Supporting Role, and Best Picture.
+- tmdb.ipynb: Python version 3.13.9. Jupyterlab version 4.4.7. Movie ID 35430 is skipped. 
+
+# Licenses/restrictions
+- License: GPL-3.0 
+- Data derived from: https://github.com/SteveHedden/FilmClub 
+
