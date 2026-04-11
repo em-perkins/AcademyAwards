@@ -6,7 +6,7 @@
 
 #import tmdb API key
 
-tmdb_api_key = "c288cfd4a1d527ed2e6d111d6d23a5ae"
+tmdb_api_key = #insert personal TMDB API key here#
 
 import requests
 
@@ -60,7 +60,7 @@ import requests
 import time
 
 BASE_URL = "https://api.themoviedb.org/3"
-API_KEY = "c288cfd4a1d527ed2e6d111d6d23a5ae"
+API_KEY = #inset personal TMDB API key here#
 
 def get_movie_credits(movie_id):
     url = f"{BASE_URL}/movie/{movie_id}/credits"
@@ -150,7 +150,7 @@ import requests
 import time
 
 BASE_URL = "https://api.themoviedb.org/3"
-API_KEY = "c288cfd4a1d527ed2e6d111d6d23a5ae"
+API_KEY = #insert personal TMDB API Key here#
 
 def get_movie_credits(movie_id):
     url = f"{BASE_URL}/movie/{movie_id}/credits"
