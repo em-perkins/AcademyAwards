@@ -1,0 +1,1117 @@
+---
+title: "AcademyAwards"
+author: "Emely P."
+date: "2026-05-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#import library
+```{r}
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(readr)
+library(tidyr)
+library(reshape2)
+library(jsonlite)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(visNetwork)
+library(scales)
+```
+
+
+# import csv
+```{r}
+data <- read_csv("~/Downloads/film_details_v3.csv")
+```
+#Frequency Count of every unique value in column "director" 
+```{r}
+table(data$director)
+```
+#Sort by most frequent
+```{r}
+sort(table(data$director), decreasing = TRUE)
+```
+#Plot in bar graph
+```{r}
+barplot(table(data$director))
+```
+#plot directors with more than 1 nomination
+```{r}
+dir_counts <- sort(table(data$director), decreasing = TRUE)
+dir_counts_filtered <- dir_counts[dir_counts > 1]
+
+barplot(dir_counts_filtered,
+        las = 2,
+        col = "navy",
+        main = "Frequent Directors",
+        ylab = "Number of Movies")
+```
+#Change orientation, names on y-axis
+```{r}
+barplot(dir_counts_filtered,
+        horiz = TRUE,
+        col = "navy",
+        main = "Director Nominations Count",
+        xlab = "Number of Movies",
+        las = 1,
+        space = 0.5)
+```
+#change bar graph so directors names are visable
+```{r}
+max_chars <- max(nchar(names(dir_counts_filtered)))
+par(mar = c(5, max_chars * 0.7, 4, 2))
+
+barplot(dir_counts_filtered,
+        horiz = TRUE,
+        col = "navy",
+        main = "Director's Film Nomination Count",
+        xlab = "Number of Movies",
+        las = 1,
+        space = 0.5)
+```
+# Total number of directors with more than 1 nomination
+```{r}
+dir_counts <- table(data$director)
+sum(dir_counts > 1)
+```
+#Table of director counts
+```{r}
+dir_counts <- table(data$director)
+table(dir_counts)
+```
+#Plot of director counts
+```{r}
+barplot(table(dir_counts),
+        col = "navy",
+        main = "Director Frequency Distribution",
+        xlab = "Number of Nominations",
+        ylab = "Number of Directors")
+```
+#Plot of director counts with y-axis going to 200
+```{r}
+freq <- table(dir_counts)
+
+bp <- barplot(freq,
+              col = "navy",
+              main = "Director Frequency Distribution",
+              xlab = "Number of Nominations",
+              ylab = "Number of Directors",
+              ylim = c(0, 200))   # force y-axis to 200
+```
+#add counts on top of bar
+```{r}
+bp <- barplot(freq,
+              col = "navy",
+              main = "Director Frequency Distribution",
+              xlab = "Number of Nominations",
+              ylab = "Number of Directors",
+              ylim = c(0, 200))   # force y-axis to 200
+text(x = bp,
+     y = freq,
+     labels = freq,
+     pos = 3,        
+     cex = 0.8)
+```
+#Cast frequency
+```{r}
+all_cast <- unlist(data[paste0("Cast ", 1:15)])
+all_cast <- na.omit(all_cast)
+cast_counts <- table(all_cast)
+cast_counts
+```
+#Sort cast by frequency
+```{r}
+sort(cast_counts, decreasing = TRUE)
+```
+#Cast frequency table
+```{r}
+cast_counts <- table(all_cast)
+cast_counts_sorted <- sort(cast_counts, decreasing = TRUE)
+cast_counts_sorted[cast_counts_sorted > 1]
+```
+#Plot cast distribution
+```{r}
+cast_freq_dist <- table(cast_counts)
+cast_freq_dist
+barplot(cast_freq_dist,
+        col = "darkgreen",
+        main = "Distribution of Actor Frequencies",
+        xlab = "Number of Appearances",
+        ylab = "Number of Actors")
+```
+#Add cast counts on of bars
+```{r}
+cast_freq_dist <- table(cast_counts)
+bp2 <- barplot(cast_freq_dist,
+              col = "darkgreen",
+              main = "Distribution of Actor Frequencies",
+              xlab = "Number of Appearances",
+              ylab = "Number of Actors",
+              ylim = c(0, 4000))
+text(x = bp2,
+     y = cast_freq_dist,
+     labels = cast_freq_dist,
+     pos = 3,      # above bars
+     cex = 0.8)
+```
+#Nominated Actor/Actress Counts from Nominee Column
+```{r}
+AA_final <- read_csv("~/data/628_AcademyAwards/AA_final.csv")
+nominee_counts <- table(AA_final$Nominee)
+nominee_counts
+```
+#Nominee counts for nominations only of Actors/Actress in Nominee column
+```{r}
+data_role <- AA_final[grepl("role", AA_final$Category, ignore.case = TRUE), ]
+nominee_counts <- table(data_role$Nominee)
+nominee_counts
+```
+#Nominee counts for nomination only of Actors/Actress in Nominee Column
+```{r}
+data_role <- AA_final[grepl("role", AA_final$Category, ignore.case = TRUE), ]
+nominee_counts <- table(data_role$Nominee)
+nominee_counts
+```
+
+
+#Remove actress in leading role entry, and sort
+```{r}
+nominee_counts <- table(AA_final$Nominee)
+nominee_counts <- nominee_counts[!grepl("ACTRESS IN A LEADING ROLE",
+                                        names(nominee_counts),
+                                        ignore.case = TRUE)]
+sort(nominee_counts, decreasing = TRUE)
+```
+#Count nominee frequency bar chart
+```{r}
+barplot(nominee_counts,
+        horiz = TRUE,
+        col = "pink",
+        main = "Nominee Frequency",
+        xlab = "Number of Nominations",
+        las = 1)
+```
+#Nominee frequency distribution
+```{r}
+freq_dist <- table(nominee_counts)
+freq_dist
+barplot(freq_dist,
+        col = "pink",
+        xlab = "Number of Actor/Actress Nominations",
+        ylab = "Number of Nominees",
+        main = "Nominee Frequency Distribution")
+```
+#Add labels to bar chart
+```{r}
+bp3 <- barplot(freq_dist,
+              col = "pink",
+              ylim = c(0, max(freq_dist) * 1.1),
+              xlab = "Number of Nominations",
+              ylab = "Number of Nominees",
+              main = "Nominee Frequency Distribution")
+
+text(bp3,
+     freq_dist,
+     labels = freq_dist,
+     pos = 3,
+     cex = 0.8)
+```
+#Winner Frequency
+```{r}
+winners_role <- AA_final[
+  AA_final$Award_Status == "Winner" &
+  grepl("ROLE", AA_final$Category, ignore.case = TRUE),
+]
+winner_role_counts <- table(winners_role$Nominee)
+sort(winner_role_counts, decreasing = TRUE)
+```
+#Plot Winner Frequency
+```{r}
+win_distribution <- table(winner_role_counts)
+win_distribution
+barplot(win_distribution,
+        col = "chocolate",
+        main = "Win Distribution",
+        xlab = "Number of Wins",
+        ylab = "Number of Winners")
+```
+#Add labels to winner frequency
+```{r}
+bp4 <- barplot(win_distribution,
+              col = "chocolate",
+              ylim = c(0, max(win_distribution) * 1.1),
+              main = "Win Distribution",
+              xlab = "Number of Wins",
+              ylab = "Number of Winners")
+
+text(bp4,
+     win_distribution,
+     labels = win_distribution,
+     pos = 3,
+     cex = 0.8)
+```
+#Directors with 4 or more associated nominations
+```{r}
+director_counts <- table(data$director)
+topdirectors <- director_counts[director_counts >= 4]
+topdirectors
+```
+#table of top directors
+```{r}
+data.frame(
+  Director = names(topdirectors),
+  Films = as.numeric(topdirectors)
+)
+```
+#Filter top direcs in data.csv
+```{r}
+top_directors <- unique(data$director)
+data_top <- data[data$director %in% top_directors, ]
+```
+#Verify count
+```{r}
+nrow(data_top)
+unique(data_top$director)
+```
+#Cast List
+```{r}
+all_cast <- unlist(data[paste0("Cast ", 1:15)])
+all_cast <- trimws(na.omit(all_cast))
+all_cast <- all_cast[all_cast != ""]
+unique_cast <- unique(all_cast)
+```
+#Split AA_Final Status
+```{r}
+all_people <- unique(AA_final$Award_Status)
+winners <- unique(AA_final$Nominee[AA_final$Award_Status == "Winner"])
+nominees <- unique(AA_final$Nominee[AA_final$Award_Status == "Nominee"])
+```
+#Cast not nominated
+```{r}
+all_award_people <- unique(AA_final$Award_Status)
+not_nominated <- setdiff(unique_cast, all_award_people)
+```
+#Final Counts
+```{r}
+data.frame(
+  Category = c("Won", "Nominated", "Not nominated"),
+  Count = c(
+    length(winners),
+    length(nominees),
+    length(not_nominated)
+  )
+)
+```
+# Change data.csv title column to film
+```{r}
+names(data)[names(data) == "title"] <- "Film"
+```
+#film-details import, change title to Film, and reformat
+```{r}
+film_details <- read_csv("~/Downloads/film_details.csv")
+names(film_details)[names(film_details) == "title"] <- "Film"
+cast <- film_details %>%
+  separate_rows(top_cast, sep = ",") %>%
+  mutate(Actor = trimws(top_cast)) %>%
+  select(Film, director, Actor)
+```
+#Join cast & data role 
+```{r}
+combined <- cast %>%
+  left_join(data_role, by = c("Film", "Actor" = "Nominee"))
+```
+#Stacked categories, Winner, Nominee, Non-Nominee
+```{r}
+combined <- combined %>%
+  mutate(Status = case_when(
+    Award_Status == "Winner" ~ "Winner",
+    Award_Status == "Nominee" ~ "Nominee",
+    TRUE ~ "Non-Nominee"
+  ))
+```
+#plot stacked bar chart
+```{r}
+ggplot(combined, aes(x = director, fill = Status)) +
+  geom_bar() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("plot2.png", width = 14, height = 8, dpi = 300)
+```
+#Switch x & y axis
+```{r}
+ggplot(combined, aes(x = director, fill = Status)) +
+  geom_bar() +
+  
+  coord_flip() +
+  
+  theme_minimal() +
+  
+  theme(
+    axis.text.y = element_text(size = 6),
+    plot.margin = margin(10, 20, 20, 20)
+  )
+
+ggsave("plot2.png", width = 14, height = 14, dpi = 300)
+```
+#Filter director list
+```{r}
+film_filtered <- cast %>%
+  filter(director %in% data$director)
+```
+#combined award data
+```{r}
+combined <- film_filtered %>%
+  left_join(data_role, by = c("Film", "Actor" = "Nominee"))
+```
+
+#category list
+```{r}
+combined <- combined %>%
+  mutate(Status = case_when(
+    Award_Status == "Winner" ~ "Winner",
+    Award_Status == "Nominee" ~ "Nominee",
+    TRUE ~ "Non-Nominee"
+  ))
+```
+#Plot stacked bar chart
+```{r}
+ggplot(combined, aes(x = director, fill = Status)) +
+  geom_bar() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+#top 20 directors
+```{r}
+top_directors <- combined %>%
+  count(director, sort = TRUE) %>%
+  slice_head(n = 20) %>%
+  pull(director)
+
+combined_top <- combined %>%
+  filter(director %in% top_directors)
+
+ggplot(combined_top, aes(x = reorder(director, -table(director)[director]), 
+                         fill = Status)) +
+  geom_bar() +
+  theme_minimal() +
+  labs(x = "Director", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+#Change order status
+```{r}
+combined$Status <- factor(
+  combined$Status,
+  levels = c("Winner","Nominee","Non-Nominee")
+)
+```
+#Plot stacked bar chart
+```{r}
+top_directors <- combined %>%
+  count(director, sort = TRUE) %>%
+  slice_head(n = 20) %>%
+  pull(director)
+
+combined_top <- combined %>%
+  filter(director %in% top_directors)
+
+ggplot(combined_top, aes(x = reorder(director, -table(director)[director]), 
+                         fill = Status)) +
+  geom_bar() +
+  theme_minimal() +
+  labs(x = "Director", y = "Count") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+#Percentage stacked bar chart
+```{r}
+ggplot(combined_top, aes(x = director, fill = Status)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+#count stacked bar chart 
+```{r}
+ggplot(combined_top, aes(x = director, fill = Status)) +
+  geom_bar() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(y = "Count", x = "Director")
+```
+summary table
+```{r}
+label_data <- combined_top %>%
+  group_by(director, Status) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(director) %>%
+  mutate(total = sum(n))
+```
+#labels
+```{r}
+label_data <- label_data %>%
+  mutate(label = n)
+```
+#stacked bar chart with labels
+```{r}
+ggplot(label_data, aes(x = director, y = n, fill = Status)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = label),
+            position = position_stack(vjust = 0.5),
+            size = 2) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(y = "Count", x = "Director")
+```
+#Director film count
+```{r}
+director_film_count_all <- combined %>%
+  group_by(director) %>%
+  summarise(film_count = n_distinct(Film))
+print(director_film_count)
+```
+#top 20 director film count
+```{r}
+director_film_count <- combined_top %>%
+  group_by(director) %>%
+  summarise(film_count = n_distinct(Film))
+print(director_film_count)
+```
+#All Actor/Actress frequency
+```{r}
+actor_frequency_all <- combined %>%
+  group_by(Actor) %>%
+  summarise(Frequency = n(), .groups = "drop") %>%
+  arrange(desc(Frequency))
+print(actor_frequency_all, n = Inf)
+```
+
+# Actor/Actress frequency in top 20 directors
+```{r}
+actor_frequency <- combined_top %>%
+  group_by(Actor) %>%
+  summarise(Frequency = n(), .groups = "drop") %>%
+  arrange(desc(Frequency))
+print(actor_frequency, n = Inf)
+```
+# Heat map code
+#All Actor-Director Counts
+```{r}
+actor_director_all <- combined %>%
+  group_by(director, Actor) %>%
+  summarise(Frequency = n(), .groups = "drop")
+```
+
+#Top 20 Actor-Directo Counts
+```{r}
+actor_director <- combined_top %>%
+  group_by(director, Actor) %>%
+  summarise(Frequency = n(), .groups = "drop")
+```
+
+#Plot Heat Map All 
+```{r}
+ggplot(actor_director_all, aes(x = director, y = Actor, fill = Frequency)) +
+  geom_tile() +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 6)
+  ) +
+  scale_fill_gradient(low = "white", high = "steelblue") +
+  labs(title = "Actor–Director Collaboration Heatmap",
+       x = "Director",
+       y = "Actor",
+       fill = "Frequency")
+```
+#Heat map of top 20 
+```{r}
+ggplot(actor_director, aes(x = director, y = Actor, fill = Frequency)) +
+  geom_tile() +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 6)
+  ) +
+  scale_fill_gradient(low = "white", high = "steelblue") +
+  labs(title = "Actor–Director Collaboration Heatmap",
+       x = "Director",
+       y = "Actor",
+       fill = "Frequency")
+```
+# Heat Map with Actors with 2 or more counts (in all actors)
+```{r}
+valid_actors_all <- combined %>%
+  count(Actor) %>%
+  filter(n >= 2) %>%
+  pull(Actor)
+
+actor_director_filtered_all <- combined %>%
+  filter(Actor %in% valid_actors_all) %>%
+  count(director, Actor, name = "Frequency")
+
+full_grid_all <- expand.grid(
+  director = unique(actor_director_filtered_all$director),
+  Actor = unique(actor_director_filtered_all$Actor)
+)
+
+actor_director_filtered_all <- full_grid_all %>%
+  left_join(actor_director_filtered_all,
+            by = c("director", "Actor")) %>%
+  mutate(Frequency = ifelse(is.na(Frequency), 0, Frequency))
+
+ggplot(actor_director_filtered_all, aes(x = director, y = Actor, fill = Frequency)) +
+  geom_tile() +
+  
+  theme_minimal() +
+  
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 6)
+  ) +
+  
+  scale_fill_gradientn(
+  colors = c("white","grey","blue4", "green3", "gold", "red"),
+  values = scales::rescale(c(0, 1, 2, 3, 4, 5))
+) +
+  geom_tile(color = "grey90")+
+  
+  labs(
+    title = "All Actor–Director Heatmap (Actors with ≥2 Appearances)",
+    x = "Directors",
+    y = "Actors",
+    fill = "Frequency"
+  )
+```
+# Heat map with actors with 4 or more counts in top 20 directors
+```{r}
+valid_actors <- combined_top %>%
+  count(Actor) %>%
+  filter(n >= 4) %>%
+  pull(Actor)
+
+actor_director_filtered <- combined_top %>%
+  filter(Actor %in% valid_actors) %>%
+  count(director, Actor, name = "Frequency")
+
+full_grid <- expand.grid(
+  director = unique(actor_director_filtered$director),
+  Actor = unique(actor_director_filtered$Actor)
+)
+
+actor_director_filtered <- full_grid %>%
+  left_join(actor_director_filtered,
+            by = c("director", "Actor")) %>%
+  mutate(Frequency = ifelse(is.na(Frequency), 0, Frequency))
+
+ggplot(actor_director_filtered, aes(x = director, y = Actor, fill = Frequency)) +
+  geom_tile() +
+  
+  theme_minimal() +
+  
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 6),
+    axis.text.y = element_text(size = 6)
+  ) +
+  
+  scale_fill_gradientn(
+  colors = c("white","grey","blue4", "green3", "gold", "red"),
+  values = scales::rescale(c(0, 1, 2, 3, 4, 5))
+) +
+  geom_tile(color = "grey90")+
+  
+  labs(
+    title = "Actor–Director Heatmap (Actors with ≥2 Appearances)",
+    x = "Directors",
+    y = "Actors",
+    fill = "Frequency"
+  )
+
+```
+
+#Chi-Squared Tests
+#Keep only Winner and Nominee rows (all)
+```{r}
+award_data_all <- combined %>%
+  filter(Award_Status %in% c("Winner", "Nominee"))
+```
+
+#Keep only Winner and Nominee rows (top 20)
+```{r}
+award_data <- combined_top %>%
+  filter(Award_Status %in% c("Winner", "Nominee"))
+```
+
+# Create Actor x Director contingency table (all)
+```{r}
+actor_director_alltable <- table(
+  award_data_all$Actor,
+  award_data_all$director
+)
+```
+
+# Create Actor x Director contingency table (top 20)
+```{r}
+actor_director_table <- table(
+  award_data$Actor,
+  award_data$director
+)
+```
+# Run Chi-Square Test of Independence (all)
+```{r}
+chi_result_all <- chisq.test(actor_director_alltable)
+```
+
+# Run Chi-Square Test of Independence (top 20)
+```{r}
+chi_result <- chisq.test(actor_director_table)
+```
+# Standardized residuals (all)
+```{r}
+chi_result_all$residuals
+```
+
+# Standardized residuals (top 20)
+```{r}
+chi_result$residuals
+```
+# Convert standardized residuals into a dataframe (all)
+```{r}
+residual_table_all <- as.data.frame(as.table(chi_result_all$residuals))
+```
+
+# Convert standardized residuals into a dataframe (top 20)
+```{r}
+residual_table <- as.data.frame(as.table(chi_result$residuals))
+```
+# Rename Columns (all)
+```{r}
+colnames(residual_table_all) <- c("Actor", "Director", "Residual")
+```
+# Rename Columns (top 20)
+```{r}
+colnames(residual_table) <- c("Actor", "Director", "Residual")
+```
+# Sort by largest absolute residuals (all)
+```{r}
+residual_table_all <- residual_table_all %>%
+  arrange(desc(abs(Residual)))
+```
+# Sort by largest absolute residuals (top 20)
+```{r}
+residual_table <- residual_table %>%
+  arrange(desc(abs(Residual)))
+```
+## Monte Carlo simulated Chi-Square test (all)
+```{r}
+actor_director_table_all <- table(
+  award_data_all$Actor,
+  award_data_all$director
+)
+
+set.seed(123)
+
+chi_result_sim_all <- chisq.test(
+  actor_director_table_all,
+  simulate.p.value = TRUE,
+  B = 10000
+)
+
+chi_result_sim_all
+```
+
+## Monte Carlo simulated Chi-Square test (top 20)
+```{r}
+actor_director_table <- table(
+  award_data$Actor,
+  award_data$director
+)
+
+set.seed(123)  
+
+chi_result_sim <- chisq.test(
+  actor_director_table,
+  simulate.p.value = TRUE,
+  B = 10000
+)
+
+chi_result_sim
+```
+#Win probability with a Director (all)
+```{r}
+director_win_prob_all <- award_data_all %>%
+  group_by(director) %>%
+  summarise(
+    total_collaborations = n(),
+    wins = sum(Award_Status == "Winner"),
+    win_probability = wins / total_collaborations
+  ) %>%
+  arrange(desc(win_probability))
+
+director_win_prob_all
+```
+#Win probability Director (top 20)
+```{r}
+director_win_prob <- award_data %>%
+  group_by(director) %>%
+  summarise(
+    total_collaborations = n(),
+    wins = sum(Award_Status == "Winner"),
+    win_probability = wins / total_collaborations
+  ) %>%
+  arrange(desc(win_probability))
+
+director_win_prob
+```
+#Actor & Director Win Probability (all)
+```{r}
+actor_director_win_prob_all <- award_data_all %>%
+  group_by(director, Actor) %>%
+  summarise(
+    total = n(),
+    wins = sum(Award_Status == "Winner"),
+    win_prob = wins / total,
+    .groups = "drop"
+  ) %>%
+  arrange(desc(win_prob))
+
+actor_director_win_prob_all
+```
+#Actor & Director Win Probability (top 20)
+```{r}
+actor_director_win_prob <- award_data %>%
+  group_by(director, Actor) %>%
+  summarise(
+    total = n(),
+    wins = sum(Award_Status == "Winner"),
+    win_prob = wins / total,
+    .groups = "drop"
+  ) %>%
+  arrange(desc(win_prob))
+
+actor_director_win_prob
+```
+#Filtered by total >=3 (all)
+```{r}
+actor_director_win_prob_filtered_all <- actor_director_win_prob_all %>%
+  filter(total >= 3)
+```
+#Filtered by total >=3 (top 20)
+```{r}
+actor_director_win_prob_filtered <- actor_director_win_prob %>%
+  filter(total >= 3)
+```
+
+##Network Analysis
+# All Director/Actor Edges
+```{r}
+edges_director_actor_all <- combined %>%
+  select(Film, director, Actor) %>%
+  distinct() %>%
+  rename(from = director, to = Actor)
+```
+# Top 20 Director/Actor Edges
+```{r}
+edges_director_actor <- combined_top %>%
+  select(Film, director, Actor) %>%
+  distinct() %>%
+  rename(from = director, to = Actor)
+```
+#All Director/Actor Nodes
+```{r}
+award_scores_all <- combined %>%
+  group_by(director) %>%
+  summarise(awards = sum(Status == "Winner", na.rm = TRUE)) %>%
+  rename(name = director)
+
+actor_scores_all <- combined %>%
+  group_by(Actor) %>%
+  summarise(awards = sum(Status == "Winner", na.rm = TRUE)) %>%
+  rename(name = Actor)
+
+nodes_all <- bind_rows(award_scores_all, actor_scores_all) %>%
+  group_by(name) %>%
+  summarise(awards = sum(awards, na.rm = TRUE))
+```
+#Top 20 Director/Actor Nodes
+```{r}
+award_scores <- combined_top %>%
+  group_by(director) %>%
+  summarise(awards = sum(Status == "Winner", na.rm = TRUE)) %>%
+  rename(name = director)
+
+actor_scores <- combined_top %>%
+  group_by(Actor) %>%
+  summarise(awards = sum(Status == "Winner", na.rm = TRUE)) %>%
+  rename(name = Actor)
+
+nodes <- bind_rows(award_scores, actor_scores) %>%
+  group_by(name) %>%
+  summarise(awards = sum(awards, na.rm = TRUE))
+```
+
+#Status to weighted score (all)
+```{r}
+na_all <- combined %>%
+  mutate(
+    Status = trimws(Status),
+    award_score_all = case_when(
+      Status == "Winner" ~ 2,
+      Status == "Nominee" ~ 1,
+      Status == "Non-Nominee" ~ 0,
+      TRUE ~ 0
+    )
+  )
+```
+#Status to weighted score (top 20)
+```{r}
+na <- combined_top %>%
+  mutate(
+    Status = trimws(Status),
+    award_score = case_when(
+      Status == "Winner" ~ 2,
+      Status == "Nominee" ~ 1,
+      Status == "Non-Nominee" ~ 0,
+      TRUE ~ 0
+    )
+  )
+```
+#Rebuild node scores (all)
+```{r}
+director_scores_all <- na_all %>%
+  group_by(director) %>%
+  summarise(awards = sum(award_score_all, na.rm = TRUE)) %>%
+  rename(name = director)
+
+actor_scores_all <- na_all %>%
+  group_by(Actor) %>%
+  summarise(awards = sum(award_score_all, na.rm = TRUE)) %>%
+  rename(name = Actor)
+
+node_attributes_all <- bind_rows(director_scores_all, actor_scores_all) %>%
+  group_by(name) %>%
+  summarise(awards = sum(awards), .groups = "drop")
+```
+#Rebuild node scores (top 20)
+```{r}
+director_scores <- na %>%
+  group_by(director) %>%
+  summarise(awards = sum(award_score, na.rm = TRUE)) %>%
+  rename(name = director)
+
+actor_scores <- na %>%
+  group_by(Actor) %>%
+  summarise(awards = sum(award_score, na.rm = TRUE)) %>%
+  rename(name = Actor)
+
+node_attributes <- bind_rows(director_scores, actor_scores) %>%
+  group_by(name) %>%
+  summarise(awards = sum(awards), .groups = "drop")
+```
+#Vertices from edges only (all)
+```{r}
+nodes_all <- data.frame(
+  name = unique(c(edges_director_actor_all$from,
+                  edges_director_actor_all$to))
+)
+
+nodes_all <- nodes_all %>%
+  left_join(node_attributes_all, by = "name") %>%
+  mutate(awards = ifelse(is.na(awards), 0, awards))
+```
+#Vertices from edges only (top 20)
+```{r}
+nodes <- data.frame(
+  name = unique(c(edges_director_actor$from,
+                  edges_director_actor$to))
+)
+
+nodes <- nodes %>%
+  left_join(node_attributes, by = "name") %>%
+  mutate(awards = ifelse(is.na(awards), 0, awards))
+```
+
+#Check (all)
+```{r}
+setdiff(edges_director_actor_all$from, nodes_all$name)
+setdiff(edges_director_actor_all$to, nodes_all$name)
+```
+#Check(top 20)
+```{r}
+setdiff(edges_director_actor$from, nodes$name)
+setdiff(edges_director_actor$to, nodes$name)
+```
+#Clean Names again as missing actor/directors in nodes (all)
+```{r}
+clean_na_all <- na_all %>%
+  mutate(
+    director = trimws(tolower(director)),
+    Actor = trimws(tolower(Actor)),
+    Status = trimws(Status)
+  )
+```
+# Clean Names again as missing actor/directors in nodes (top 20)
+```{r}
+clean_na <- na %>%
+  mutate(
+    director = trimws(tolower(director)),
+    Actor = trimws(tolower(Actor)),
+    Status = trimws(Status)
+  )
+```
+
+#Rebuild nodes from edges (all)
+```{r}
+edges_director_actor_all <- clean_na_all %>%
+  select(director, Actor) %>%
+  filter(!is.na(director), !is.na(Actor)) %>%
+  filter(director != "", Actor != "") %>%
+  distinct() %>%
+  rename(from = director, to = Actor)
+```
+#Rebuild nodes from edges (top 20)
+```{r}
+edges_director_actor <- clean_na %>%
+  select(director, Actor) %>%
+  filter(!is.na(director), !is.na(Actor)) %>%
+  filter(director != "", Actor != "") %>%
+  distinct() %>%
+  rename(from = director, to = Actor)
+```
+#Check (all)
+```{r}
+all(edges_director_actor_all$from %in% nodes_all$name)
+
+all(edges_director_actor_all$to %in% nodes_all$name)
+```
+#Check (top 20)
+```{r}
+all(edges_director_actor$from %in% nodes$name)
+
+all(edges_director_actor$to %in% nodes$name)
+```
+#Clean edge names again (all)
+```{r}
+edges_director_actor_all <- edges_director_actor_all %>%
+  mutate(
+    from = trimws(tolower(from)),
+    to = trimws(tolower(to))
+  ) %>%
+  filter(
+    from != "",
+    to != "",
+    !is.na(from),
+    !is.na(to)
+  )
+```
+# rebuild nodes from edges (all)
+```{r}
+nodes_all <- data.frame(
+  name = unique(c(
+    edges_director_actor_all$from,
+    edges_director_actor_all$to
+  ))
+)
+```
+#check (all)
+```{r}
+all(edges_director_actor_all$from %in% nodes_all$name)
+
+all(edges_director_actor_all$to %in% nodes_all$name)
+```
+#Clean edge names again (top 20)
+```{r}
+edges_director_actor <- edges_director_actor %>%
+  mutate(
+    from = trimws(tolower(from)),
+    to = trimws(tolower(to))
+  ) %>%
+  filter(
+    from != "",
+    to != "",
+    !is.na(from),
+    !is.na(to)
+  )
+```
+# rebuild nodes from edges (top 20)
+```{r}
+nodes <- data.frame(
+  name = unique(c(
+    edges_director_actor$from,
+    edges_director_actor$to
+  ))
+)
+```
+#check (top 20)
+```{r}
+all(edges_director_actor$from %in% nodes$name)
+
+all(edges_director_actor$to %in% nodes$name)
+```
+#Build graph
+```{r}
+graph_all <- graph_from_data_frame(
+  d = edges_director_actor_all,
+  vertices = nodes_all,
+  directed = FALSE
+)
+
+nodes_vis_all <- data.frame(
+  id = nodes_all$name,
+  label = nodes_all$name
+)
+
+nodes_vis_all$degree <- degree(graph_all)
+
+nodes_vis_all$value <- rescale(
+  exp(nodes_vis_all$degree / max(nodes_vis_all$degree)),
+  to = c(5, 40)
+)
+
+directors <- unique(edges_director_actor_all$from)
+
+director_colors <- rainbow(length(directors))
+names(director_colors) <- directors
+
+nodes_vis_all$color <- ifelse(
+  nodes_vis_all$id %in% directors,
+  director_colors[nodes_vis_all$id],
+  "lightblue"
+  )
+
+edges_vis_all <- edges_director_actor_all %>%
+  group_by(from, to) %>%
+  summarise(weight = n(), .groups = "drop")
+
+edges_vis_all$value <- edges_vis_all$weight
+
+visNetwork(nodes_vis_all, edges_vis_all) %>%
+  
+  visNodes(
+    shape = "dot"
+  ) %>%
+  
+  visEdges(
+    smooth = FALSE,
+    scaling = list(min = 1, max = 10),
+    color = "gray"
+  ) %>%
+  
+  visOptions(
+    highlightNearest = TRUE,
+    nodesIdSelection = TRUE
+  ) %>%
+  
+  visPhysics(
+    stabilization = TRUE
+  )
+```
+
+
+
