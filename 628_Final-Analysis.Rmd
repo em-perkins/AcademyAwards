@@ -1054,7 +1054,7 @@ all(edges_director_actor$from %in% nodes$name)
 
 all(edges_director_actor$to %in% nodes$name)
 ```
-#Build graph
+#Build graph (all)
 ```{r}
 graph_all <- graph_from_data_frame(
   d = edges_director_actor_all,
@@ -1113,5 +1113,565 @@ visNetwork(nodes_vis_all, edges_vis_all) %>%
   )
 ```
 
+#Build graph (top 20)
+```{r}
+graph <- graph_from_data_frame(
+  d = edges_director_actor,
+  vertices = nodes,
+  directed = FALSE
+)
 
+nodes_vis <- data.frame(
+  id = nodes$name,
+  label = nodes$name
+)
+
+nodes_vis$degree <- degree(graph)
+
+nodes_vis$value <- rescale(
+  exp(nodes_vis$degree / max(nodes_vis$degree)),
+  to = c(5, 40)
+)
+
+directors <- unique(edges_director_actor$from)
+
+director_colors <- rainbow(length(directors))
+names(director_colors) <- directors
+
+nodes_vis$color <- ifelse(
+  nodes_vis$id %in% directors,
+  director_colors[nodes_vis$id],
+  "lightblue"
+  )
+
+edges_vis <- edges_director_actor %>%
+  group_by(from, to) %>%
+  summarise(weight = n(), .groups = "drop")
+
+edges_vis$value <- edges_vis$weight
+
+visNetwork(nodes_vis, edges_vis) %>%
+  
+  visNodes(
+    shape = "dot"
+  ) %>%
+  
+  visEdges(
+    smooth = FALSE,
+    scaling = list(min = 1, max = 10),
+    color = "gray"
+  ) %>%
+  
+  visOptions(
+    highlightNearest = TRUE,
+    nodesIdSelection = TRUE
+  ) %>%
+  
+  visPhysics(
+    stabilization = TRUE
+  )
+```
+#Chi-Square Analysis
+
+#Director & Award outcome contingency table (all)
+```{r}
+combined$award <- ifelse(combined$Status %in% c("Winner", "Nominee"),
+                    "Recognized", "Not_Recognized")
+combined$award <- factor(combined$award, levels = c("Not_Recognized", "Recognized"))
+```
+#Director & Award outcome contingency table (top 20)
+```{r}
+combined_top$award <- ifelse(combined_top$Status %in% c("Winner", "Nominee"),
+                    "Recognized", "Not_Recognized")
+combined_top$award <- factor(combined_top$award, levels = c("Not_Recognized", "Recognized"))
+```
+
+#Generate contingency table (all)
+```{r}
+tab_all <- xtabs(~ director + award, data = combined)  
+tab_all
+```
+#Generate contingency table (top 20)
+```{r}
+tab <- xtabs(~ director + award, data = combined_top)  
+tab
+```
+#Add Row proportions: within each director, what % are recognized? (all)
+```{r}
+prop_by_director_all <- prop.table(tab_all, margin = 1)
+prop_by_director_all
+```
+#Add Row proportions: within each director, what % are recognized? (top 20)
+```{r}
+prop_by_director <- prop.table(tab, margin = 1)
+prop_by_director
+```
+#Chi-square test of independence (all)
+```{r}
+chisq.test(tab_all)
+```
+
+#Chi-square test of independence (top 20)
+```{r}
+chisq.test(tab)
+```
+#Check expected counts (all)
+```{r}
+test_all <- chisq.test(tab_all)
+test_all$expected
+```
+
+#Check expected counts (top 20)
+```{r}
+test <- chisq.test(tab)
+test$expected
+```
+#Subset of directors (top 10)
+```{r}
+top10_directors <- names(sort(table(combined$director), decreasing = TRUE))[1:10]
+combined_top10 <- combined[combined$director %in% top10_directors, ]
+
+tab_top10 <- xtabs(~ director + award, data = combined_top10)
+tab_top10
+
+chisq.test(tab_top10)
+prop.table(tab_top10, 1)
+```
+#Subset of directors (top 15)
+```{r}
+top15_directors <- names(sort(table(combined$director), decreasing = TRUE))[1:15]
+combined_top15 <- combined[combined$director %in% top15_directors, ]
+
+tab_top15 <- xtabs(~ director + award, data = combined_top15)
+tab_top15
+
+chisq.test(tab_top15)
+prop.table(tab_top15, 1)
+```
+
+#Fisher's exact test -Alejandro González Iñárritu
+```{r}
+target <- "Alejandro González Iñárritu"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+## Explanation: Recognition rate = (9/75) 12%, Other recognition rate= 8.27%, Null hypothesis (H0): no association (odds ratio = 1), p = 0.2871 is greater than 0.05, so you fail to reject H0, estimated odds ratio is 0.66, but with a wide CI crossing 1, so the direction and size of any effect are uncertain.
+
+#Fisher's exact test -Christopher Nolan
+```{r}
+target <- "Christopher Nolan"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+#Fisher's exact test -Clint Eastwood
+```{r}
+target <- "Clint Eastwood"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -David Fincher 
+```{r}
+target <- "David Fincher"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -Martin Scorsese 
+```{r}
+target <- "Martin Scorsese"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -Paul Thomas Anderson
+```{r}
+target <- "Paul Thomas Anderson"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -Quentin Tarantino
+```{r}
+target <- "Quentin Tarantino"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -Ridley Scott
+```{r}
+target <- "Ridley Scott"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+
+#Fisher's exact test -Steven Spielberg
+```{r}
+target <- "Steven Spielberg"  
+
+combined$dir2 <- ifelse(combined$director == target, target, "Other")
+
+tab_2x2 <- table(combined$dir2, combined$award)
+tab_2x2
+
+fisher.test(tab_2x2)
+```
+#Recognition by top 20 director
+```{r}
+topN <- 20
+
+top_directors <- names(sort(table(combined$director), decreasing = TRUE))[1:topN]
+dat_top <- subset(combined, director %in% top_directors)
+
+rate_top <- prop.table(tab, margin = 1)
+rate_top
+
+recognition_rate <- data.frame(
+  director = rownames(tab),
+  n_total = rowSums(tab),
+  n_recognized = tab[, "Recognized"],
+  recognized_rate = tab[, "Recognized"] / rowSums(tab)
+)
+
+recognition_rate[order(-recognition_rate$recognized_rate), ]
+```
+#Chi-Square test top 20
+```{r}
+chi <- chisq.test(tab)
+chi
+```
+# Check expected counts (top 20)
+```{r}
+min_expected <- min(chi$expected)
+prop_small <- mean(chi$expected < 5)
+
+min_expected
+prop_small
+```
+#Simulated p-value (top 20). The (simulated) p-value is significant (e.g., p < 0.05). If p-value is not significant: No evidence that recognition depends on director among the Top N.
+```{r}
+chi_sim <- chisq.test(tab, simulate.p.value = TRUE, B = 10000)
+chi_sim
+```
+#Which directors contribute most to the association using standardized residuals. Large positive residuals: more recognized than expected for that director.Large negative residuals: fewer recognized than expected.
+```{r}
+chi_sim$stdres  
+```
+#Rank directors by residual (recognized)
+```{r}
+std <- chi_sim$stdres
+sort(std[, "Recognized"], decreasing = TRUE)
+```
+#Residenuals and recognition rates
+```{r}
+tab_top <- tab  
+rate <- tab_top[, "Recognized"] / rowSums(tab_top)
+
+out <- data.frame(
+  director = rownames(tab_top),
+  n_total = rowSums(tab_top),
+  recognized_rate = rate,
+  stdres_recognized = chi_sim$stdres[, "Recognized"]
+)
+
+out[order(-out$stdres_recognized), ]
+```
+#Film recognition indicator, film have any nominee/winner in the cast
+```{r}
+combined$recognized <- combined$Status %in% c("Winner", "Nominee")
+
+film_any_rec <- aggregate(recognized ~ Film + director, combined, any)
+table(film_any_rec$recognized)
+prop.table(table(film_any_rec$recognized))
+```
+# how many nominees/winners per film, more than 3
+```{r}
+film_n_rec <- aggregate(recognized ~ Film + director, combined, sum)
+summary(film_n_rec$recognized)
+head(film_n_rec[order(-film_n_rec$recognized), ], 40)
+```
+#films/row per actor
+```{r}
+actor_counts <- sort(table(combined$Actor), decreasing = TRUE)
+head(actor_counts, 75)
+```
+#Counts of nominations/wins by category
+```{r}
+recognized_rows <- subset(combined, Status %in% c("Winner", "Nominee"))
+
+sort(table(recognized_rows$Category), decreasing = TRUE)
+```
+#Wins vs nominees by category
+```{r}
+with(recognized_rows, table(Category, Status))
+```
+#Nominations/wins over time
+```{r}
+recognized_rows$Ceremony_Year <- as.integer(recognized_rows$Ceremony_Year)
+
+sort(table(recognized_rows$Ceremony_Year), decreasing = FALSE)
+
+with(recognized_rows, table(Ceremony_Year, Status))
+```
+#categories associated with directors
+```{r}
+tab_dir_cat <- with(recognized_rows, table(director, Category))
+
+recognized_rows <- combined %>% 
+  filter(Status %in% c("Winner", "Nominee"), !is.na(Category))
+
+tab_dir_cat2 <- tab_dir_cat[rowSums(tab_dir_cat) > 0, colSums(tab_dir_cat) > 0]
+
+print(tab_dir_cat2)
+```
+#Category proportion per director (all)
+```{r}
+dir_cat_profile <- prop.table(tab_dir_cat2, margin = 1)  
+
+
+profile_df <- as.data.frame(dir_cat_profile)
+names(profile_df) <- c("director", "Category", "prop")
+
+
+counts_df <- as.data.frame(tab_dir_cat2)
+names(counts_df) <- c("director", "Category", "n")
+
+profile_df <- profile_df %>%
+  left_join(counts_df, by = c("director", "Category")) %>%
+  arrange(director, desc(prop))
+
+profile_df
+```
+# Table for top 5 directors per category
+```{r}
+counts_df <- as.data.frame(tab_dir_cat2)
+names(counts_df) <- c("director", "Category", "n")
+
+top5_by_category_counts <- counts_df %>%
+  group_by(Category) %>%
+  arrange(desc(n), .by_group = TRUE) %>%
+  slice_head(n = 5) %>%
+  ungroup()
+
+top5_by_category_counts
+```
+#actors had any prior nomination/win before this film?
+
+#find film year for each film
+```{r}
+film_year <- combined %>%
+  filter(!is.na(Ceremony_Year)) %>%
+  group_by(Film, director) %>%
+  summarise(film_year = suppressWarnings(min(as.integer(Ceremony_Year))), .groups = "drop")
+```
+
+#combine film year back to data
+```{r}
+combined2 <- combined %>%
+  left_join(film_year, by = c("Film", "director"))
+```
+
+#filter acting categories 
+```{r}
+acting_aa <- AA_final %>%
+  filter(str_detect(Category, "^ACTOR|^ACTRESS"))
+
+actor_firsts <- acting_aa %>%
+  group_by(Nominee) %>%
+  summarise(
+    first_nom_year = min(Ceremony_Year[Award_Status %in% c("Nominee", "Winner")], na.rm = TRUE),
+    first_win_year = ifelse(any(Award_Status == "Winner"),
+                            min(Ceremony_Year[Award_Status == "Winner"], na.rm = TRUE),
+                            NA_integer_),
+    .groups = "drop"
+  )
+```
+
+#mark each credit as "prioir nominee/winner"
+```{r}
+credits <- combined2 %>%
+  left_join(actor_firsts, by = c("Actor" = "Nominee")) %>%
+  mutate(
+    film_year = as.integer(film_year),
+    prior_nominee = !is.na(first_nom_year) & !is.na(film_year) & first_nom_year < film_year,
+    prior_winner  = !is.na(first_win_year) & !is.na(film_year) & first_win_year < film_year
+  )
+```
+
+#Director % of credits that are prior nominees/winner rates
+```{r}
+dir_prior_rates <- credits %>%
+  filter(!is.na(film_year)) %>%          
+  group_by(director) %>%
+  summarise(
+    n_credits = n(),
+    prior_nom_count = sum(prior_nominee, na.rm = TRUE),
+    prior_win_count = sum(prior_winner, na.rm = TRUE),
+    prior_nom_rate = prior_nom_count / n_credits,
+    prior_win_rate = prior_win_count / n_credits,
+    .groups = "drop"
+  ) %>%
+  arrange(desc(prior_nom_rate))
+
+dir_prior_rates
+```
+# top 20 directors' rates
+```{r}
+topN <- 20
+top_dirs <- credits %>%
+  count(director, sort = TRUE) %>%
+  slice_head(n = topN) %>%
+  pull(director)
+
+dir_prior_rates %>% filter(director %in% top_dirs)
+```
+
+#Director/Actor pair analysis, top 25 rows
+```{r}
+pair_stats <- credits %>%
+  filter(!is.na(film_year)) %>%
+  group_by(director, Actor) %>%
+  summarise(
+    n_films_together = n_distinct(Film),
+    any_prior_nominee = any(prior_nominee, na.rm = TRUE),
+    any_prior_winner = any(prior_winner, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  filter(any_prior_nominee | any_prior_winner) %>%
+  arrange(desc(n_films_together))
+
+head(pair_stats, 25)
+```
+#director-actor pairings
+```{r}
+dir_repeat <- pair_stats %>%
+  group_by(director) %>%
+  summarise(
+    n_prior_awarded_actors = n(),
+    max_repeat_with_prior_awarded = max(n_films_together),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(max_repeat_with_prior_awarded))
+
+dir_repeat
+```
+#Chi-Square test
+```{r}
+top_credits <- credits %>%
+  filter(director %in% top_dirs, !is.na(film_year)) %>%
+  mutate(prior_nominee = factor(prior_nominee, levels = c(FALSE, TRUE)))
+
+tab_prior <- table(top_credits$director, top_credits$prior_nominee)
+chisq.test(tab_prior, simulate.p.value = TRUE, B = 10000)
+```
+#Chi-Square by directors. Result: the rate of working with actors who were already nominated/winners differs significantly by director.
+```{r}
+my_dirs <- c(
+  "Adam McKay",
+  "Alejandro González Iñárritu",
+  "Alexander Payne",
+  "Aaron Sorkin",
+  "Christopher Nolan",
+  "Clint Eastwood",
+  "Darren Aronofsky",
+  "David Fincher",
+  "David O. Russell",
+  "Greta Gerwig",
+  "James Mangold",
+  "Martin Scorsese",
+  "Paul Thomas Anderson",
+  "Pedro Almodóvar",
+  "Peter Jackson",
+  "Quentin Tarantino",
+  "Ridley Scott",
+  "Ron Howard",
+  "Sam Mendes",
+  "Stephen Daldry",
+  "Stephen Frears",
+  "Steven Spielberg",
+  "Woody Allen"
+  
+)
+
+dat_sel <- credits %>%
+  filter(director %in% my_dirs, !is.na(film_year)) %>%
+  mutate(prior_nominee = factor(prior_nominee, levels = c(FALSE, TRUE)))
+
+tab_sel <- table(dat_sel$director, dat_sel$prior_nominee)
+tab_sel
+
+chisq.test(tab_sel, simulate.p.value = TRUE, B = 10000)
+```
+# Which directors differ from tab_self. Large positive residuals (in the TRUE column) = more prior nominees than expected
+```{r}
+prior_rate <- tab_sel[, "TRUE"] / rowSums(tab_sel)
+sort(prior_rate, decreasing = TRUE)
+```
+#which dirctors deviate
+```{r}
+chi <- chisq.test(tab_sel, simulate.p.value = TRUE, B = 10000)
+stdres_true <- chi$stdres[, "TRUE"]
+sort(stdres_true, decreasing = TRUE)
+```
+#Chi-square for all directors
+```{r}
+all_credits <- credits %>%
+  filter(!is.na(film_year)) %>%
+  mutate(prior_nominee = factor(prior_nominee, levels = c(FALSE, TRUE)))
+
+tab_all <- table(all_credits$director, all_credits$prior_nominee)
+tab_all
+
+chisq.test(tab_all, simulate.p.value = TRUE, B = 10000)
+```
+```{r}
+chi_all <- chisq.test(tab_all, simulate.p.value = TRUE, B = 10000)
+
+stdres_true <- chi_all$stdres[, "TRUE"]
+head(sort(stdres_true, decreasing = TRUE), 50)   
+head(sort(stdres_true, decreasing = FALSE), 50)  
+
+prior_rate <- tab_all[, "TRUE"] / rowSums(tab_all)
+head(sort(prior_rate, decreasing = TRUE), 50)
+```
 
