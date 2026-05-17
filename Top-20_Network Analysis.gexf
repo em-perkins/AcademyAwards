@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:viz="http:///www.gexf.net/1.1draft/viz">
+  <meta/>
+  <graph defaultedgetype="undirected">
+    <attributes class="node">
+      <attribute id="attr_type" title="attr_type" type="string"/>
+      <attribute id="global_occurrences" title="global_occurrences" type="integer"/>
+      <attribute id="attr_1_11" title="attr_1_11" type="string"/>
+      <attribute id="attr_2_10" title="attr_2_10" type="string"/>
+      <attribute id="attr_2_3" title="attr_2_3" type="string"/>
+      <attribute id="degree" title="degree" type="integer"/>
+      <attribute id="rawSize" title="rawSize" type="double"/>
+    </attributes>
+    <attributes class="edge">
+      <attribute id="matchings_count" title="matchings_count" type="integer"/>
+      <attribute id="rawWeight" title="rawWeight" type="integer"/>
+    </attributes>
+    <nodes>
+      <node id="director_a344ed8bcd220ba7991f22da6868f397" label="alejandro gonzález iñárritu">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="75"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="74"/>
+          <attvalue for="rawSize" value="29.818290652352456"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="29.818290652352456"/>
+        <viz:position x="-4276.303091439323" y="-3873.9424233406576"/>
+      </node>
+      <node id="director_627301c680462968e38dd78e63096e9e" label="christopher nolan">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="54"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-4250.941165409951" y="-3713.5055878506837"/>
+      </node>
+      <node id="director_844d3b486dea38a3f118b0228f37e5c9" label="clint eastwood">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="105"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="104"/>
+          <attvalue for="rawSize" value="31.362777725958903"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="31.362777725958903"/>
+        <viz:position x="-5151.1288953364265" y="-3551.0488546412635"/>
+      </node>
+      <node id="director_2b244b7eb98b881697c4a1dd49caaf88" label="david fincher">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="75"/>
+          <attvalue for="attr_1_11" value="0 | 1"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="74"/>
+          <attvalue for="rawSize" value="29.818290652352456"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="29.818290652352456"/>
+        <viz:position x="-6850.268579461696" y="-4442.078199452869"/>
+      </node>
+      <node id="director_b40f4565eae5d824eb6005e7b6c2458a" label="david o. russell">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="49"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-6309.3523285408155" y="-3701.743271470869"/>
+      </node>
+      <node id="director_9dab46652318e63f38f531c08cea17e8" label="james mangold">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="60"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-6094.843282912178" y="-3827.6528258214885"/>
+      </node>
+      <node id="director_9eaa65be4b3c68fe4e22ce921696d051" label="martin scorsese">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="105"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="94"/>
+          <attvalue for="rawSize" value="31.362777725958903"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="31.362777725958903"/>
+        <viz:position x="-5813.291912429277" y="-3598.622271208123"/>
+      </node>
+      <node id="director_ad1abb7030ff97209fff71ab33d72767" label="paul thomas anderson">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="90"/>
+          <attvalue for="attr_1_11" value="0 | 1"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="80"/>
+          <attvalue for="rawSize" value="30.655189680146755"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="30.655189680146755"/>
+        <viz:position x="-3499.964360658256" y="-3990.503921532387"/>
+      </node>
+      <node id="director_6d4e0dc1b37490ad9ff5366cf0aa0455" label="quentin tarantino">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="75"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="67"/>
+          <attvalue for="rawSize" value="29.818290652352456"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="29.818290652352456"/>
+        <viz:position x="-4786.606571312641" y="-3596.8361808535756"/>
+      </node>
+      <node id="director_e6cad17081d83a74d85385cb9fc0c675" label="ridley scott">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="75"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="73"/>
+          <attvalue for="rawSize" value="29.818290652352456"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="29.818290652352456"/>
+        <viz:position x="-3373.9260140484275" y="-4210.517888499202"/>
+      </node>
+      <node id="director_3885baf78f6533bf155d8bc03b55e106" label="ron howard">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="59"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-5389.064293200873" y="-3663.109615847893"/>
+      </node>
+      <node id="director_670d941ef9b403d1879646c8be5d4da3" label="sam mendes">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="59"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-4627.635413051137" y="-3679.593415636063"/>
+      </node>
+      <node id="director_4ae22adcb2c17a879b152ebd23205dec" label="stephen daldry">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="60"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-6587.368190199512" y="-3931.779139264757"/>
+      </node>
+      <node id="director_1f326a41983b68a2275f17f8bec37782" label="stephen frears">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="58"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-6817.305048500332" y="-4061.0838790669436"/>
+      </node>
+      <node id="director_14f0befeee56235462c2e5b1506a3f9d" label="steven spielberg">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="150"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="147"/>
+          <attvalue for="rawSize" value="33"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="33"/>
+        <viz:position x="-4457.504311664423" y="-3688.818409506125"/>
+      </node>
+      <node id="director_bcbbdcb52ef7657d9a771994ab027292" label="woody allen">
+        <attvalues>
+          <attvalue for="attr_type" value="director"/>
+          <attvalue for="global_occurrences" value="60"/>
+          <attvalue for="attr_1_11" value="0 | 1 | 2"/>
+          <attvalue for="attr_2_10" value="director"/>
+          <attvalue for="attr_2_3" value="n/a"/>
+          <attvalue for="degree" value="59"/>
+          <attvalue for="rawSize" value="28.794009023578973"/>
+        </attvalues>
+        <viz:color r="139" g="87" b="42"/>
+        <viz:size value="28.794009023578973"/>
+        <viz:position x="-3764.6383321087537" y="-3920.436731623217"/>
+      </node>
+      <node id="actor_d756425961f8460149c44c63250e24c7" label="amy adams">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="5"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David O. Russell | Paul Thomas Anderson | Ron Howard | Steven Spielberg"/>
+          <attvalue for="degree" value="4"/>
+          <attvalue for="rawSize" value="17.387700324068568"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="17.387700324068568"/>
+        <viz:position x="-6350.326865688871" y="-5692.786309379656"/>
+      </node>
+      <node id="actor_529f58a3516f765abf83d44ca13d2cda" label="amy ryan">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | Clint Eastwood | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-5658.1308483010525" y="-6044.645701397604"/>
+      </node>
+      <node id="actor_771a7e91f5a3dd8a34d6f5ec62287cb5" label="brad pitt">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | David Fincher | Quentin Tarantino"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4712.672423640149" y="-6299.125668878277"/>
+      </node>
+      <node id="actor_76105cacf0d1d0f6b058efeb47442f82" label="bradley cooper">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="5"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Clint Eastwood | David O. Russell | Paul Thomas Anderson"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="17.387700324068568"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="17.387700324068568"/>
+        <viz:position x="-5225.222071221694" y="-6120.316358803631"/>
+      </node>
+      <node id="actor_a5f3a8c5cf6b03013560952edfadbea6" label="cate blanchett">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="6"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee | Winner"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | David Fincher | Martin Scorsese | Peter Jackson | Woody Allen"/>
+          <attvalue for="degree" value="5"/>
+          <attvalue for="rawSize" value="18.224599351862864"/>
+        </attvalues>
+        <viz:color r="245" g="166" b="35"/>
+        <viz:size value="18.224599351862864"/>
+        <viz:position x="-3415.846794790311" y="-4860.075267307052"/>
+      </node>
+      <node id="actor_7d86de20be8486a63efd06925f1dd537" label="christian bale">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee | Winner"/>
+          <attvalue for="attr_2_3" value="Christopher Nolan | David O. Russell | James Mangold"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4497.675584262387" y="-6243.11373721148"/>
+      </node>
+      <node id="actor_b7ea693a9a8dcc847248d9878cdfec5a" label="christopher plummer">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David Fincher | Ridley Scott | Ron Howard"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-6063.521521620106" y="-6156.049244223908"/>
+      </node>
+      <node id="actor_b669e27330a33da72899951798838cec" label="ciarán hinds">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Paul Thomas Anderson | Sam Mendes | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-4024.4739436022346" y="-5592.994540280761"/>
+      </node>
+      <node id="actor_b01ff7433540a26db9fc42100acdcc6d" label="daniel craig">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David Fincher | Sam Mendes | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-3793.4433055965137" y="-5646.481400698024"/>
+      </node>
+      <node id="actor_97033ab5200f1fa9f864a89786dce7c8" label="daniel day-lewis">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Martin Scorsese | Paul Thomas Anderson | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-3425.1266837772414" y="-5145.450762565613"/>
+      </node>
+      <node id="actor_da89fc8de035b1d2ad3df9e15ea40ac6" label="eddie marsan">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | Martin Scorsese | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-3303.7154483704703" y="-4459.761278791791"/>
+      </node>
+      <node id="actor_7184c22ab7305cc8939725920761e429" label="jesse plemons">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Martin Scorsese | Paul Thomas Anderson | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4938.705424929289" y="-6079.240129121314"/>
+      </node>
+      <node id="actor_924d727abe405f9012cc3f3262268a9a" label="joaquin phoenix">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee"/>
+          <attvalue for="attr_2_3" value="James Mangold | Paul Thomas Anderson | Ridley Scott"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="126" g="211" b="33"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-3120.011351744061" y="-5064.880650958614"/>
+      </node>
+      <node id="actor_117f0880101239740b2e3d8fade2c73d" label="john c. reilly">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="5"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Martin Scorsese | Paul Thomas Anderson | Stephen Daldry"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="17.387700324068568"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="17.387700324068568"/>
+        <viz:position x="-3573.668007395836" y="-5240.168908097315"/>
+      </node>
+      <node id="actor_b88e1e137d1b4bbb9e12be83b4c78242" label="joseph cross">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David Fincher | Paul Thomas Anderson | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-4277.901692562007" y="-5810.932000064476"/>
+      </node>
+      <node id="actor_d4c9b5937dd52383375ef68333bd5d15" label="kathy bates">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Alexander Payne | Clint Eastwood | Sam Mendes | Woody Allen"/>
+          <attvalue for="degree" value="4"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4247.196389356152" y="-6186.242502078302"/>
+      </node>
+      <node id="actor_11faa0eb7383c17b98b82f728e28caed" label="leonardo dicaprio">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="11"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee | Winner"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | Christopher Nolan | Martin Scorsese | Quentin Tarantino | Sam Mendes | Steven Spielberg"/>
+          <attvalue for="degree" value="6"/>
+          <attvalue for="rawSize" value="21.00690591856575"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+        <viz:size value="21.00690591856575"/>
+        <viz:position x="-5362.359983222021" y="-5926.747517837265"/>
+      </node>
+      <node id="actor_e1772edc177815da36fac1f425455a7b" label="mark wahlberg">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="5"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David O. Russell | Martin Scorsese | Paul Thomas Anderson | Peter Jackson | Ridley Scott"/>
+          <attvalue for="degree" value="5"/>
+          <attvalue for="rawSize" value="17.387700324068568"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="17.387700324068568"/>
+        <viz:position x="-6720.061704990073" y="-5120.444801273401"/>
+      </node>
+      <node id="actor_d150c4a1cbb018de02070aba7129d2de" label="matt damon">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="6"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Christopher Nolan | Clint Eastwood | James Mangold | Martin Scorsese | Ridley Scott | Steven Spielberg"/>
+          <attvalue for="degree" value="6"/>
+          <attvalue for="rawSize" value="18.224599351862864"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="18.224599351862864"/>
+        <viz:position x="-3437.3325060823763" y="-4646.4769498766855"/>
+      </node>
+      <node id="actor_5601193ba32782c56d49d34809469095" label="meryl streep">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Stephen Daldry | Stephen Frears | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-4433.123476520742" y="-6039.52248662407"/>
+      </node>
+      <node id="actor_93f727dc35b227214d7f414b7e10e26c" label="michael peña">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Clint Eastwood | David O. Russell | Ridley Scott"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-3716.682749114978" y="-5440.407439644471"/>
+      </node>
+      <node id="actor_92574c6ed1fa44cdca343ad6ccb8d665" label="michael sheen">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Ron Howard | Stephen Frears | Woody Allen"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-5378.0946556167555" y="-6296.79685535884"/>
+      </node>
+      <node id="actor_9bc7a98c5f7d975687161a5140bc66c8" label="morgan freeman">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee | Winner"/>
+          <attvalue for="attr_2_3" value="Christopher Nolan | Clint Eastwood | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4022.0122895193026" y="-5862.285256271746"/>
+      </node>
+      <node id="actor_9e8242022e6708af467398c2410443e5" label="nina arianda">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="3"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Clint Eastwood | Stephen Frears | Woody Allen"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="15.042890004215323"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+        <viz:size value="15.042890004215323"/>
+        <viz:position x="-6540.457422070296" y="-5423.383013384562"/>
+      </node>
+      <node id="actor_5b88788eedc1a07bf9dc43a8a8059950" label="robert de niro">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="5"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="David O. Russell | Martin Scorsese | Quentin Tarantino"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="17.387700324068568"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="17.387700324068568"/>
+        <viz:position x="-6296.00732798816" y="-5937.380963786289"/>
+      </node>
+      <node id="actor_6f47b1adc9121c7ec4562961ec95700a" label="sean penn">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee | Winner"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | Clint Eastwood | Paul Thomas Anderson | Woody Allen"/>
+          <attvalue for="degree" value="4"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4905.875549867909" y="-6434.899866619613"/>
+      </node>
+      <node id="actor_2a61010d0875142710578087cbf5eaf0" label="tom hanks">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="6"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Sam Mendes | Stephen Daldry | Steven Spielberg"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="18.224599351862864"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="18.224599351862864"/>
+        <viz:position x="-3480.9723400053713" y="-5545.93635783079"/>
+      </node>
+      <node id="actor_deddb0b72051be0efd18785463501b0f" label="tom hardy">
+        <attvalues>
+          <attvalue for="attr_type" value="Actor"/>
+          <attvalue for="global_occurrences" value="4"/>
+          <attvalue for="attr_1_11" value="n/a"/>
+          <attvalue for="attr_2_10" value="Nominee | Non-Nominee"/>
+          <attvalue for="attr_2_3" value="Alejandro González Iñárritu | Christopher Nolan | Ridley Scott"/>
+          <attvalue for="degree" value="3"/>
+          <attvalue for="rawSize" value="16.36341869529508"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+        <viz:size value="16.36341869529508"/>
+        <viz:position x="-4134.546592413843" y="-6028.364340350813"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="geid_149_2" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_529f58a3516f765abf83d44ca13d2cda" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_8" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_771a7e91f5a3dd8a34d6f5ec62287cb5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_10" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_a5f3a8c5cf6b03013560952edfadbea6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="245" g="166" b="35"/>
+      </edge>
+      <edge id="geid_149_22" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_da89fc8de035b1d2ad3df9e15ea40ac6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_45" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_65" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_6f47b1adc9121c7ec4562961ec95700a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_66" source="director_a344ed8bcd220ba7991f22da6868f397" target="actor_deddb0b72051be0efd18785463501b0f" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_154" source="director_627301c680462968e38dd78e63096e9e" target="actor_7d86de20be8486a63efd06925f1dd537" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_177" source="director_627301c680462968e38dd78e63096e9e" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_183" source="director_627301c680462968e38dd78e63096e9e" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_187" source="director_627301c680462968e38dd78e63096e9e" target="actor_9bc7a98c5f7d975687161a5140bc66c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_200" source="director_627301c680462968e38dd78e63096e9e" target="actor_deddb0b72051be0efd18785463501b0f" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_203" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_529f58a3516f765abf83d44ca13d2cda" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_211" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_76105cacf0d1d0f6b058efeb47442f82" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_244" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_d4c9b5937dd52383375ef68333bd5d15" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_264" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_267" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_93f727dc35b227214d7f414b7e10e26c" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_271" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_9bc7a98c5f7d975687161a5140bc66c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_273" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_9e8242022e6708af467398c2410443e5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_288" source="director_844d3b486dea38a3f118b0228f37e5c9" target="actor_6f47b1adc9121c7ec4562961ec95700a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_365" source="director_2b244b7eb98b881697c4a1dd49caaf88" target="actor_771a7e91f5a3dd8a34d6f5ec62287cb5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_370" source="director_2b244b7eb98b881697c4a1dd49caaf88" target="actor_a5f3a8c5cf6b03013560952edfadbea6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="245" g="166" b="35"/>
+      </edge>
+      <edge id="geid_149_372" source="director_2b244b7eb98b881697c4a1dd49caaf88" target="actor_b7ea693a9a8dcc847248d9878cdfec5a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_373" source="director_2b244b7eb98b881697c4a1dd49caaf88" target="actor_b01ff7433540a26db9fc42100acdcc6d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_398" source="director_2b244b7eb98b881697c4a1dd49caaf88" target="actor_b88e1e137d1b4bbb9e12be83b4c78242" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_433" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_d756425961f8460149c44c63250e24c7" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_436" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_76105cacf0d1d0f6b058efeb47442f82" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="3"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_440" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_7d86de20be8486a63efd06925f1dd537" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_465" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_e1772edc177815da36fac1f425455a7b" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_470" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_93f727dc35b227214d7f414b7e10e26c" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_475" source="director_b40f4565eae5d824eb6005e7b6c2458a" target="actor_5b88788eedc1a07bf9dc43a8a8059950" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_487" source="director_9dab46652318e63f38f531c08cea17e8" target="actor_7d86de20be8486a63efd06925f1dd537" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_511" source="director_9dab46652318e63f38f531c08cea17e8" target="actor_924d727abe405f9012cc3f3262268a9a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="126" g="211" b="33"/>
+      </edge>
+      <edge id="geid_149_519" source="director_9dab46652318e63f38f531c08cea17e8" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_557" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_a5f3a8c5cf6b03013560952edfadbea6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="245" g="166" b="35"/>
+      </edge>
+      <edge id="geid_149_562" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_97033ab5200f1fa9f864a89786dce7c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_567" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_da89fc8de035b1d2ad3df9e15ea40ac6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_586" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_7184c22ab7305cc8939725920761e429" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_591" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_117f0880101239740b2e3d8fade2c73d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_606" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="5"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_612" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_e1772edc177815da36fac1f425455a7b" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_614" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_624" source="director_9eaa65be4b3c68fe4e22ce921696d051" target="actor_5b88788eedc1a07bf9dc43a8a8059950" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_638" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_d756425961f8460149c44c63250e24c7" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_644" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_76105cacf0d1d0f6b058efeb47442f82" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_650" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_b669e27330a33da72899951798838cec" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_653" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_97033ab5200f1fa9f864a89786dce7c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_671" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_7184c22ab7305cc8939725920761e429" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_674" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_924d727abe405f9012cc3f3262268a9a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="126" g="211" b="33"/>
+      </edge>
+      <edge id="geid_149_675" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_117f0880101239740b2e3d8fade2c73d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_677" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_b88e1e137d1b4bbb9e12be83b4c78242" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_690" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_e1772edc177815da36fac1f425455a7b" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_706" source="director_ad1abb7030ff97209fff71ab33d72767" target="actor_6f47b1adc9121c7ec4562961ec95700a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_810" source="director_6d4e0dc1b37490ad9ff5366cf0aa0455" target="actor_771a7e91f5a3dd8a34d6f5ec62287cb5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_843" source="director_6d4e0dc1b37490ad9ff5366cf0aa0455" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="2"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_858" source="director_6d4e0dc1b37490ad9ff5366cf0aa0455" target="actor_5b88788eedc1a07bf9dc43a8a8059950" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_884" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_b7ea693a9a8dcc847248d9878cdfec5a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_903" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_924d727abe405f9012cc3f3262268a9a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="126" g="211" b="33"/>
+      </edge>
+      <edge id="geid_149_914" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_e1772edc177815da36fac1f425455a7b" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_915" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_916" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_93f727dc35b227214d7f414b7e10e26c" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_938" source="director_e6cad17081d83a74d85385cb9fc0c675" target="actor_deddb0b72051be0efd18785463501b0f" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_945" source="director_3885baf78f6533bf155d8bc03b55e106" target="actor_d756425961f8460149c44c63250e24c7" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_953" source="director_3885baf78f6533bf155d8bc03b55e106" target="actor_b7ea693a9a8dcc847248d9878cdfec5a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_983" source="director_3885baf78f6533bf155d8bc03b55e106" target="actor_92574c6ed1fa44cdca343ad6ccb8d665" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1013" source="director_670d941ef9b403d1879646c8be5d4da3" target="actor_b669e27330a33da72899951798838cec" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1016" source="director_670d941ef9b403d1879646c8be5d4da3" target="actor_b01ff7433540a26db9fc42100acdcc6d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1034" source="director_670d941ef9b403d1879646c8be5d4da3" target="actor_d4c9b5937dd52383375ef68333bd5d15" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1038" source="director_670d941ef9b403d1879646c8be5d4da3" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_1057" source="director_670d941ef9b403d1879646c8be5d4da3" target="actor_2a61010d0875142710578087cbf5eaf0" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1087" source="director_4ae22adcb2c17a879b152ebd23205dec" target="actor_117f0880101239740b2e3d8fade2c73d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1100" source="director_4ae22adcb2c17a879b152ebd23205dec" target="actor_5601193ba32782c56d49d34809469095" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1115" source="director_4ae22adcb2c17a879b152ebd23205dec" target="actor_2a61010d0875142710578087cbf5eaf0" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1152" source="director_1f326a41983b68a2275f17f8bec37782" target="actor_5601193ba32782c56d49d34809469095" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1153" source="director_1f326a41983b68a2275f17f8bec37782" target="actor_92574c6ed1fa44cdca343ad6ccb8d665" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1156" source="director_1f326a41983b68a2275f17f8bec37782" target="actor_9e8242022e6708af467398c2410443e5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1185" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_d756425961f8460149c44c63250e24c7" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1186" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_529f58a3516f765abf83d44ca13d2cda" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1209" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_b669e27330a33da72899951798838cec" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1211" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_b01ff7433540a26db9fc42100acdcc6d" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1212" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_97033ab5200f1fa9f864a89786dce7c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1224" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_da89fc8de035b1d2ad3df9e15ea40ac6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1249" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_7184c22ab7305cc8939725920761e429" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1255" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_b88e1e137d1b4bbb9e12be83b4c78242" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1264" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_11faa0eb7383c17b98b82f728e28caed" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_1271" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_d150c4a1cbb018de02070aba7129d2de" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1278" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_5601193ba32782c56d49d34809469095" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1285" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_9bc7a98c5f7d975687161a5140bc66c8" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+      <edge id="geid_149_1317" source="director_14f0befeee56235462c2e5b1506a3f9d" target="actor_2a61010d0875142710578087cbf5eaf0" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="4"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1338" source="director_bcbbdcb52ef7657d9a771994ab027292" target="actor_a5f3a8c5cf6b03013560952edfadbea6" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="245" g="166" b="35"/>
+      </edge>
+      <edge id="geid_149_1357" source="director_bcbbdcb52ef7657d9a771994ab027292" target="actor_d4c9b5937dd52383375ef68333bd5d15" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="74" g="144" b="226"/>
+      </edge>
+      <edge id="geid_149_1365" source="director_bcbbdcb52ef7657d9a771994ab027292" target="actor_92574c6ed1fa44cdca343ad6ccb8d665" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1369" source="director_bcbbdcb52ef7657d9a771994ab027292" target="actor_9e8242022e6708af467398c2410443e5" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="189" g="16" b="224"/>
+      </edge>
+      <edge id="geid_149_1381" source="director_bcbbdcb52ef7657d9a771994ab027292" target="actor_6f47b1adc9121c7ec4562961ec95700a" weight="4">
+        <attvalues>
+          <attvalue for="matchings_count" value="1"/>
+          <attvalue for="rawWeight" value="4"/>
+        </attvalues>
+        <viz:color r="80" g="227" b="194"/>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
