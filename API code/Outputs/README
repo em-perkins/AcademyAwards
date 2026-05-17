@@ -1,1 +1,45 @@
+This readme file was generated on 2026-05-17 by Emely Perkins. 
 
+Title: Academy Awards API Output
+
+# Author/Principal Investigator Information
+- Name: Emely Perkins
+- ORCID: N/A
+- Institution: Pratt Institute
+- Email: eperki40@pratt.edu
+
+# Date of Collection
+- March 2026
+
+# Keywords
+- tmdb: The Movie Database 
+- API: Application Programming Interface
+- .csv: comma-separated values (spreadsheet)
+
+# Language
+- The markdown within code was programmed in Python. 
+
+# File List
+- cleaned_output.csv
+- cleaned_out_v2.csv
+- film_details.csv
+- film_details_v2.csv
+- film_details_v3.csv
+
+
+# File Description
+- cleaned_output.csv: TMDB movie title and movie ID list.
+- cleaned_out_v2.csv: UpdatedTMDB movie title and movie ID list for correct movie id codes.
+- film_details.csv: Academy Award winning film metadata for top 15 billed cast, director, genre, release_date, and budget pulled through API. 
+- film_details_v2.csv Correct movie ids for Academy Award winning films in scope for top 15 billed cast, director, genre, release_date, and budget pulled through API. 
+- film_details_v3.csv: Removed missing movie id, reorganized columns, and top 15 billed cast members split into 15 columns. 
+
+# Data Specific Information
+- film_details.csv: 6 Skipped films; five skipped due to incorrect movie ID code and one due to not in database. 
+- film_details_v2.csv: Fixed incorrect movie ID Code, and movie ID 35430 (Tinker Tailor Soldier Spy)
+- film_details_v3.csv: Removed movie ID 35430 from analysis
+- My personal TMDB API key was removed from code. To run code TMDB API key is needed. 
+
+# Licenses/restrictions
+- License: GPL-3.0 
+- Data derived from: https://github.com/SteveHedden/FilmClub 
