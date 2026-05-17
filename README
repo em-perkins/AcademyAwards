@@ -12,3 +12,22 @@ Introduction:
 Winning an Academy Award is widely recognized as a marker of success in the film industry, often leading to higher salaries, 
 greater visibility and demand, and increased prestige. Professional networks and repeated collaborations may also shape career advancement 
 and recognition within Hollywood. This study explores the relationship between actor-director collaborations and award success.
+
+# Keywords
+- .csv: comma-separated values (spreadsheet)
+- 
+
+# Language
+- English
+- Python script
+- R script
+
+# File List
+- API Code folder
+- Network-Analysis folder
+- RStudio-Analysis folder
+
+# File Description
+- API Code folder: A README file contains list of all file types in folder. API Code folder contains an Output folder of results used in the RStudio-Analysis folder. API Code folder is for TMDBI API used for data for this analysis.
+- Network-Analysis folder: Contains files used for GephiLite to create a network analysis diagram, and the image used in conference poster. 
+- RStudio-Analysis folder: This folder contains files used to create the analysis of this project from RStudio. 
