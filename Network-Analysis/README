@@ -12,8 +12,9 @@ Title: Gephi Lite Network Analysis
 - 
 
 # Keywords
-- .csv: comma-separated values (spreadsheet)
-- 
+- .gexf: Graph Exchange XML Format (GEXF) is a language for describing complex networks structures, their associated data and dynamics. 
+- .tiff: Tag Image File Format(TIFF) is an industry-standard raster graphics file format recognized for its high-quality image storage.
+- Gephi Lite: Gephi Lite is a free, web-based, and installation-free version of the popular Gephi desktop software used for visual network and graph analysis. Gephi Lite Link: https://lite.gephi.org
 
 # Language
 - English
@@ -21,13 +22,17 @@ Title: Gephi Lite Network Analysis
 # File List
 - All Director-Actor relationships.gexf
 - Top-20_Network Analysis.gexf
-- 
+- Top-20.tiff
 
 # File Description
-- 
+- All Director-Actor relationships.gexf: 
+- Top-20_Network Analysis.gexf
+- Top-20.tiff
 
 # Data Specific Information
--  
+- GEXF files can be uploaded into Gephi Lite to view analysis independently. 
+- All Director-Actor relationships.gexf was directly exported from RStudio Analysis.
+- Top-20_Network Analysis.gexf was converted using Table2Net website, https://medialab.github.io/table2net/ . 
 
 # Licenses/restrictions
 - License: GPL-3.0 
