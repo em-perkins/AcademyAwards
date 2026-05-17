@@ -13,19 +13,35 @@ Title: RStudio Data Analysis
 
 # Keywords
 - .csv: comma-separated values (spreadsheet)
-- 
+- .Rmd: An RMD file (with the .Rmd extension) is a plain text file used in RStudio for data analysis and reporting. It combines standard text (written in Markdown), embedded executable code chunks, and output into a single, fully reproducible document.
+- md: An .md file is a plain-text document saved in Markdown, a lightweight markup language used to format text for the web.
+- Rproj: An .Rproj file is a configuration file used by the RStudio IDE to organize and manage your work as a "Project". 
 
 # Language
 - 
 
 # File List
-- 
+- .gitignore
+- AA.csv
+- Academy-Award_Cleaned.Rmd
+- Academy-Award_Cleaned.html
+- Academy-Award_Cleaned.md
+- Final-Analysis.Rmd
+- RStudio Code.Rproj
+- film_details.csv
+- film_details_v3.csv
 
 # File Description
-- 
+- A .gitignore file tells Git which untracked files and folders to ignore in your project. It prevents unnecessary files (like build artifacts, log files, or sensitive credentials) from being committed to your repository. 
+- Academy-Award_Cleaned files were used to clean up the Academy Awards data frome the Academy of Motion Picture Arts and Sciences, Academy Awards Database.
+- Final-Analysis.Rmd: is the R Markdown and code used for analysis Academy Awards data and Film/Cast data from TMDB. Frequencies/counts, bar charts, stacked bar chart, heat maps, and chi-squared analysis are in the file. 
+- RStudio Code.Rproj is the project folder for the Final-Analysis.Rmd.
+- film_details.csv and film_details_v3.csv contain film metadata. 
 
 # Data Specific Information
--  
+- film_details.csv, film_details_v3.csv,and AA_final.csv were used in Final-Analysis.Rmd code. 
+- AA.csv was used in Academy-Award_Cleaned.Rmd, and the output is AA_final.csv.
+- film_details.csv and film_details_v3.csv are from API Code Outputs folder. 
 
 # Licenses/restrictions
 - License: GPL-3.0 
