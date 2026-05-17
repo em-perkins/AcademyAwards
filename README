@@ -9,18 +9,19 @@ Title: Academy Awards Github
 - Email: eperki40@pratt.edu
 
 Introduction: 
-Winning an Academy Award is widely recognized as a marker of success in the film industry, often leading to higher salaries, 
-greater visibility and demand, and increased prestige. Professional networks and repeated collaborations may also shape career advancement 
-and recognition within Hollywood. This study explores the relationship between actor-director collaborations and award success.
+Winning an Academy Award is widely recognized as a marker of success in the film industry, often leading to higher salaries, greater visibility and demand, and increased prestige. Professional networks and repeated collaborations may also shape career advancement and recognition within Hollywood. This study explores the relationship between actor-director collaborations and award success.
 
 # Keywords
+- API: Application Programming Interface
+- Network Analysis: Network analysis is a methodological approach that studies relationships between interconnected entities. By breaking systems down into nodes (the entities, such as people, computers, or variables) and edges (the connections). 
+- Academy Awards: More commonly known as the Oscars, are awards based on artistic and technical merit in film. They are presented annually by the Academy of Motion Picture Arts and Sciences in the United States in recognition of excellence in cinematic achievements.
 - .csv: comma-separated values (spreadsheet)
-- 
+
 
 # Language
 - English
-- Python script
-- R script
+- Python 
+- R 
 
 # File List
 - API Code folder
@@ -31,3 +32,9 @@ and recognition within Hollywood. This study explores the relationship between a
 - API Code folder: A README file contains list of all file types in folder. API Code folder contains an Output folder of results used in the RStudio-Analysis folder. API Code folder is for TMDBI API used for data for this analysis.
 - Network-Analysis folder: Contains files used for GephiLite to create a network analysis diagram, and the image used in conference poster. 
 - RStudio-Analysis folder: This folder contains files used to create the analysis of this project from RStudio. 
+
+# Date of Collection
+- Files in this collection were created between March 2026 - May 2026. 
+
+# Licenses/restrictions
+- License: GPL-3.0 
