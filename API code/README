@@ -1,4 +1,4 @@
-This readme file was generated on 2026-04-11 by Emely Perkins. 
+This readme file was generated on 2026-04-11 by Emely Perkins. Updated 2026-05-17 by Emely Perkins. 
 
 Title: TMDB film data
 
@@ -19,7 +19,7 @@ Title: TMDB film data
 - .txt: text file
 
 # Language
-- The markdown within code is written in language, and was programmed in Python
+- The markdown within code was programmed in Python. 
 
 # File List
 - films_tmdb.csv
