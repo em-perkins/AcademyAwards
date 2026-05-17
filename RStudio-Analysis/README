@@ -42,6 +42,7 @@ Title: RStudio Data Analysis
 - film_details.csv, film_details_v3.csv,and AA_final.csv were used in Final-Analysis.Rmd code. 
 - AA.csv was used in Academy-Award_Cleaned.Rmd, and the output is AA_final.csv.
 - film_details.csv and film_details_v3.csv are from API Code Outputs folder. 
+- Final-Analysis.Rmd: Creates GEXF file for Gephi Lite. 
 
 # Licenses/restrictions
 - License: GPL-3.0 
