@@ -1674,4 +1674,135 @@ head(sort(stdres_true, decreasing = FALSE), 50)
 prior_rate <- tab_all[, "TRUE"] / rowSums(tab_all)
 head(sort(prior_rate, decreasing = TRUE), 50)
 ```
+#GephiLite create csv
+```{r}
+gephi <- combined %>%
+  mutate(Status = .[[ncol(.)]]) %>%   # grabs last column safely
+  mutate(
+    director = str_squish(director),
+    Actor    = str_squish(Actor),
+    Status   = str_squish(Status)
+  ) %>%
+  filter(!is.na(director), !is.na(Actor)) %>%
+  filter(Status %in% c("Winner", "Nominee", "Non-Nominee"))  # keep only the 3 labels
+```
+#one edge oer director-actor pair
+```{r}
+edges_all <- combined %>%
+  group_by(director, Actor) %>%
+  summarise(
+    n_total = n(),
+    n_wins  = sum(Status == "Winner"),
+    n_noms  = sum(Status == "Nominee"),
+    n_non   = sum(Status == "Non-Nominee"),
+    # a few useful weights for Gephi sizing:
+    weight_recognized = n_wins + n_noms,  # how many recognized credits in this pair
+    weight_all = n_total,                 # total credits in this pair
+    .groups = "drop"
+  ) %>%
+  rename(Source = director, Target = Actor)
+```
+#Export edges for gephi 
+```{r}
+write_csv(edges_all, "gephi_edges_director_actor_ALL_statuses.csv")
+```
+#create nodes
+```{r}
+nodes_directors <- edges_all %>%
+  distinct(Id = Source) %>%
+  mutate(Label = Id, Type = "Director")
+
+nodes_actors <- edges_all %>%
+  distinct(Id = Target) %>%
+  mutate(Label = Id, Type = "Actor")
+
+nodes_all <- bind_rows(nodes_directors, nodes_actors)
+
+write_csv(nodes_all, "gephi_nodes_director_actor_ALL.csv")
+```
+#Edge labeled by status
+```{r}
+edges_all2 <- edges_all %>%
+  mutate(
+    dominant_status = case_when(
+      n_wins > 0 ~ "Winner_present",
+      n_noms > 0 ~ "Nominee_present",
+      TRUE ~ "Only_Non-Nominee"
+    )
+  )
+write_csv(edges_all2, "gephi_edges_director_actor_ALL_statuses_with_label.csv")
+```
+
+#Covert to GEXF
+```{r}
+install.packages("rgexf")
+library(rgexf)
+library(readr)
+library(dplyr)
+```
+# READ EDGES OF CSV
+```{r}
+# Check required columns exist
+stopifnot(all(c("Source","Target") %in% names(edges_all2)))
+```
+
+#nodes table
+```{r}
+# edge.list() needs a 2-column edge list (source, target)
+el <- as.data.frame(edges_all2[, c("Source","Target")])
+colnames(el) <- c("source", "target")
+
+x <- edge.list(el)   # returns $nodes (id,label) and $edges (source,target) [1]
+```
+
+#clean xml
+```{r}
+xml_escape <- function(x) {
+  x <- as.character(x)
+  x <- gsub("&", "&amp;", x, fixed = TRUE)
+  x <- gsub("<", "&lt;",  x, fixed = TRUE)
+  x <- gsub(">", "&gt;",  x, fixed = TRUE)
+  x <- gsub("\"", "&quot;", x, fixed = TRUE)
+  x <- gsub("'", "&apos;",  x, fixed = TRUE)
+  x
+}
+```
+#Apply node labels
+```{r}
+# Ensure nodes has exactly two columns: id, label
+nodes <- x$nodes
+colnames(nodes)[1:2] <- c("id", "label")
+
+# Escape node labels
+nodes$label <- xml_escape(nodes$label)
+
+# Edge attributes: escape only character/factor columns
+edge_att <- edges_all2 %>%
+  dplyr::select(-Source, -Target)
+
+edge_att <- edge_att %>%
+  mutate(across(where(is.factor), as.character)) %>%
+  mutate(across(where(is.character), xml_escape))
+```
+#write GEXF
+```{r}
+g <- write.gexf(
+  nodes    = nodes,
+  edges    = x$edges,
+  edgesAtt = edge_att,
+  defaultedgetype = "undirected"
+)
+
+print(g, file = "director_actor_all_statuses.gexf")
+```
+#Final Checks
+```{r}
+any(grepl("&", nodes$label))
+which(grepl("&", nodes$label))[1:10]
+
+# For edge attributes (character columns)
+char_cols <- names(edge_att)[sapply(edge_att, is.character)]
+bad <- sapply(edge_att[char_cols], \(v) any(grepl("&", v)))
+names(bad)[bad]
+```
 
